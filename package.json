@@ -6,9 +6,9 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "node src/scripts/deploy.js",
-    "deploy:all": "run-s deploy:mainnet deploy:goerli deploy:gc",
+    "deploy:all": "run-s deploy:mainnet deploy:sepolia deploy:gc",
     "deploy:mainnet": "cross-env NETWORK=mainnet SUBGRAPH=cow yarn deploy",
-    "deploy:goerli": "cross-env NETWORK=goerli SUBGRAPH=cow-goerli yarn deploy",
+    "deploy:sepolia": "cross-env NETWORK=sepolia SUBGRAPH=cow-sepolia yarn deploy",
     "deploy:gc": "cross-env NETWORK=gnosis SUBGRAPH=cow-gc yarn deploy"
   },
   "dependencies": {
