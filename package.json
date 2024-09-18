@@ -13,8 +13,8 @@
     "deploy:arbitrum-one": "cross-env NETWORK=arbitrum-one SUBGRAPH=cow-arb yarn deploy"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.48.0",
-    "@graphprotocol/graph-ts": "^0.27.0",
+    "@graphprotocol/graph-cli": "^0.82.0",
+    "@graphprotocol/graph-ts": "^0.35.1",
     "mustache": "^4.2.0",
     "yarn-run-all": "^3.1.1"
   },
