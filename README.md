@@ -4,17 +4,18 @@ Implements a subgraph for the [CoW Protocol](https://github.com/cowprotocol/cont
 
 _This is a work in progress_
 
-- [Subgraph on mainnet](https://thegraph.com/studio/subgraph/cow/)
-- [Subgraph on goerli](https://thegraph.com/studio/subgraph/cow-goerli/)
-- [Subgraph on gnosis chain network](https://thegraph.com/studio/subgraph/cow-gc/)
+- [Subgraph on mainnet](https://thegraph.com/studio/subgraph/cow-subgraph-mainnet/)
+- [Subgraph on sepolia](https://thegraph.com/studio/subgraph/cow-subgraph-sepolia/)
+- [Subgraph on gnosis chain network](https://thegraph.com/studio/subgraph/cow-subgraph-gnosis/)
+- [Subgraph on arbitrum one network](https://thegraph.com/studio/subgraph/cow-subgraph-arb/)
 
 For more information about:
 
-The Cow Protocol: https://docs.cow.fi/
+The Cow Protocol: <https://docs.cow.fi/>
 
-The Graph: https://thegraph.com/docs/en/
+The Graph: <https://thegraph.com/docs/en/>
 
-There is also a GP v1 subgraph here: https://github.com/gnosis/dex-subgraph
+There is also a GP v1 subgraph here: <https://github.com/gnosis/dex-subgraph>
 
 ## Model
 
@@ -27,7 +28,7 @@ _Requisites:_ You must have access to a console and have yarn installed. More in
 1. Install the dependencies by executing:
 
 ```bash
-$ yarn
+yarn
 ```
 
 2. Go to The Graph [Studio](https://thegraph.com/studio/dashboard) and log in using your github credentials.
