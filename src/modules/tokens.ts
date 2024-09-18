@@ -28,8 +28,8 @@ export namespace tokens {
       let tokenName = erc20Token.try_name()
       let tokenSymbol = erc20Token.try_symbol()
       token.decimals = !tokenDecimals.reverted
-        ? tokenDecimals.value
-        : DEFAULT_DECIMALS
+      ? I32.parseInt(tokenDecimals.value.toString()) as i32
+      : DEFAULT_DECIMALS
       token.name = !tokenName.reverted ? tokenName.value : ""
       token.symbol = !tokenSymbol.reverted ? tokenSymbol.value : ""
       token.totalVolume = ZERO_BI
@@ -80,7 +80,9 @@ export namespace tokens {
     let erc20Token = ERC20.bind(tokenAddress)
     let tokenDecimals = erc20Token.try_decimals()
 
-    return tokenDecimals.reverted ? DEFAULT_DECIMALS : tokenDecimals.value
+    return !tokenDecimals.reverted
+      ? I32.parseInt(tokenDecimals.value.toString()) as i32
+      : DEFAULT_DECIMALS
   }
 
   export function createTokenTradingEvent(timestamp: i32, tokenId: string, tradeId: string, amount: BigInt, amountEth: BigDecimal | null, amountUsd: BigDecimal | null, tokenPrice: BigDecimal | null): void {
