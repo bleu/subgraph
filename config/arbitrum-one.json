@@ -1,0 +1,6 @@
+{
+  "network": "arbitrum-one",
+  "startBlock": 204704802,
+  "uniV3Factory": "0x1F98431c8aD98523631AE4a59f267346ea31F984",
+  "uniV3StartBlock": 165
+}

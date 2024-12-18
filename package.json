@@ -6,14 +6,15 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "node src/scripts/deploy.js",
-    "deploy:all": "run-s deploy:mainnet deploy:goerli deploy:gc",
+    "deploy:all": "run-s deploy:mainnet deploy:sepolia deploy:gc deploy:arbitrum-one",
     "deploy:mainnet": "cross-env NETWORK=mainnet SUBGRAPH=cow yarn deploy",
-    "deploy:goerli": "cross-env NETWORK=goerli SUBGRAPH=cow-goerli yarn deploy",
-    "deploy:gc": "cross-env NETWORK=gnosis SUBGRAPH=cow-gc yarn deploy"
+    "deploy:sepolia": "cross-env NETWORK=sepolia SUBGRAPH=cow-sepolia yarn deploy",
+    "deploy:gc": "cross-env NETWORK=gnosis SUBGRAPH=cow-gc yarn deploy",
+    "deploy:arbitrum-one": "cross-env NETWORK=arbitrum-one SUBGRAPH=cow-arb yarn deploy"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.48.0",
-    "@graphprotocol/graph-ts": "^0.27.0",
+    "@graphprotocol/graph-cli": "^0.82.0",
+    "@graphprotocol/graph-ts": "^0.35.1",
     "mustache": "^4.2.0",
     "yarn-run-all": "^3.1.1"
   },

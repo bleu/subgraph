@@ -62,20 +62,20 @@ export function fetchTokenName(tokenAddress: Address): string {
   return nameValue
 }
 
-export function fetchTokenDecimals(tokenAddress: Address): BigInt {
-  let contract = ERC20.bind(tokenAddress)
-  // try types uint8 for decimals
-  let decimalValue: number 
-  let decimalResult = contract.try_decimals()
-  if (!decimalResult.reverted) {
-    decimalValue = decimalResult.value
-  } else {
-    // try with the static definition
-    let staticTokenDefinition = StaticTokenDefinition.fromAddress(tokenAddress)
-    if(staticTokenDefinition != null) {
-      return staticTokenDefinition.decimals
-    }
+export function fetchTokenDecimals(tokenAddress: Address): BigInt | null {
+  let staticTokenDefinition = StaticTokenDefinition.fromAddress(tokenAddress)
+  if(staticTokenDefinition) {
+    return staticTokenDefinition.decimals
   }
 
-  return BigInt.fromI32(decimalValue as i32)
+  let contract = ERC20.bind(tokenAddress)
+  // try types uint8 for decimals
+  let decimalResult = contract.try_decimals()
+  if (!decimalResult.reverted) {
+    if (decimalResult.value.lt(BigInt.fromI32(255))) {
+      return decimalResult.value
+    }
+  } 
+
+  return null
 }
