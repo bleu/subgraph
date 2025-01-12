@@ -10,7 +10,8 @@
     "deploy:mainnet": "cross-env NETWORK=mainnet SUBGRAPH=cow-subgraph-mainnet yarn deploy",
     "deploy:sepolia": "cross-env NETWORK=sepolia SUBGRAPH=cow-subgraph-sepolia yarn deploy",
     "deploy:gc": "cross-env NETWORK=gnosis SUBGRAPH=cow-subgraph-gnosis yarn deploy",
-    "deploy:arbitrum-one": "cross-env NETWORK=arbitrum-one SUBGRAPH=cow-subgraph-arb yarn deploy"
+    "deploy:arbitrum-one": "cross-env NETWORK=arbitrum-one SUBGRAPH=cow-subgraph-arb yarn deploy",
+    "deploy:base": "cross-env NETWORK=base SUBGRAPH=cow-subgraph-base yarn deploy"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "^0.82.0",
